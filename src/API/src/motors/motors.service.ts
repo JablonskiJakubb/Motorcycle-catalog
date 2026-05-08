@@ -1,9 +1,9 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { CreateMotorDto } from './dto/create-motor.dto';
-import { UpdateMotorDto } from './dto/update-motor.dto';
+
 import { Motor } from './entities/motor.entity';
+import { CreateMotorDto } from './dto/create-motor.dto';
 
 @Injectable()
 export class MotorsService {
@@ -12,10 +12,6 @@ export class MotorsService {
     private readonly motorRepository: Repository<Motor>,
   ) {}
 
-  async create(createMotorDto: CreateMotorDto): Promise<Motor> {
-    const motor = this.motorRepository.create(createMotorDto);
-    return await this.motorRepository.save(motor);
-  }
 
   async findAll(): Promise<Motor[]> {
     return await this.motorRepository.find();
@@ -29,14 +25,8 @@ export class MotorsService {
     return motor;
   }
 
-  async update(id: number, updateMotorDto: UpdateMotorDto): Promise<Motor> {
-    const motor = await this.findOne(id);
-    const updatedMotor = this.motorRepository.merge(motor, updateMotorDto);
-    return await this.motorRepository.save(updatedMotor);
-  }
-
-  async remove(id: number): Promise<void> {
-    const motor = await this.findOne(id);
-    await this.motorRepository.remove(motor);
+  async create(createMotorDto: CreateMotorDto): Promise<Motor> {
+    const motor = this.motorRepository.create(createMotorDto);
+    return await this.motorRepository.save(motor);
   }
 }

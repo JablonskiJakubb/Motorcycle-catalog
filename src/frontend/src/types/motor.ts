@@ -13,5 +13,3 @@ export interface Motor {
   updatedAt: string;
 }
 
-export type CreateMotorDto = Omit<Motor, 'id' | 'createdAt' | 'updatedAt'>;
-export type UpdateMotorDto = Partial<CreateMotorDto>;

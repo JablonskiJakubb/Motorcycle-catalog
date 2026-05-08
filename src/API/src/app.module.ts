@@ -5,6 +5,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { MotorsModule } from './motors/motors.module';
 
+
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -26,7 +27,9 @@ import { MotorsModule } from './motors/motors.module';
       inject: [ConfigService],
     }),
     MotorsModule,
+
   ],
+
   controllers: [AppController],
   providers: [AppService],
 })

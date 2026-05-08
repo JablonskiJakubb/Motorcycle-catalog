@@ -8,10 +8,10 @@ import { RouterView } from 'vue-router';
       <div class="logo">MOTOR<span>CATALOG</span></div>
       <div class="nav-links">
         <RouterLink to="/" active-class="active">Catalog</RouterLink>
-        <RouterLink to="/add" active-class="active">Add Motor</RouterLink>
+        <RouterLink to="/add" active-class="active">Add Motorcycle</RouterLink>
       </div>
     </nav>
-    
+
     <main>
       <RouterView />
     </main>
