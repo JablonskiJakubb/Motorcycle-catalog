@@ -13,5 +13,8 @@ export interface Motor {
   updatedAt: string;
 }
 
+<<<<<<< HEAD
 export type CreateMotorDto = Omit<Motor, 'id' | 'createdAt' | 'updatedAt'>;
 export type UpdateMotorDto = Partial<CreateMotorDto>;
+=======
+>>>>>>> wersja_2.0

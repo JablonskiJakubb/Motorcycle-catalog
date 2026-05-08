@@ -1,7 +1,12 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted } from 'vue';
 import { useMotorStore } from '../stores/motor-store';
+<<<<<<< HEAD
 import { useRouter } from 'vue-router';
+=======
+import { useRouter, RouterLink } from 'vue-router';
+import { motorService } from '../api/motor-service';
+>>>>>>> wersja_2.0
 
 const props = defineProps<{
   id: string;
@@ -18,6 +23,7 @@ onUnmounted(() => {
   store.currentMotor = null;
 });
 
+<<<<<<< HEAD
 const handleDelete = async () => {
   if (confirm('Are you sure you want to delete this machine?')) {
     try {
@@ -28,6 +34,9 @@ const handleDelete = async () => {
     }
   }
 };
+=======
+
+>>>>>>> wersja_2.0
 </script>
 
 <template>
@@ -46,15 +55,23 @@ const handleDelete = async () => {
         <button @click="router.push('/')" class="btn btn-secondary">
           ← Back
         </button>
+<<<<<<< HEAD
         <div class="actions">
           <RouterLink :to="'/edit/' + store.currentMotor.id" class="btn btn-primary">Edit</RouterLink>
           <button @click="handleDelete" class="btn btn-danger">Delete</button>
         </div>
+=======
+
+>>>>>>> wersja_2.0
       </header>
 
       <div class="main-content glass">
         <div class="image-section">
+<<<<<<< HEAD
           <img :src="store.currentMotor.imageUrl || 'https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&q=80&w=600'" :alt="store.currentMotor.name">
+=======
+          <img :src="motorService.formatImageUrl(store.currentMotor.imageUrl)" :alt="store.currentMotor.name">
+>>>>>>> wersja_2.0
         </div>
         
         <div class="info-section">

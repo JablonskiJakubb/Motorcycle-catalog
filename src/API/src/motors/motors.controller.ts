@@ -1,16 +1,12 @@
-import { Controller, Get, Post, Body, Put, Param, Delete, ParseIntPipe } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, ParseIntPipe } from '@nestjs/common';
 import { MotorsService } from './motors.service';
 import { CreateMotorDto } from './dto/create-motor.dto';
-import { UpdateMotorDto } from './dto/update-motor.dto';
+
 
 @Controller('motors')
 export class MotorsController {
-  constructor(private readonly motorsService: MotorsService) {}
+  constructor(private readonly motorsService: MotorsService) { }
 
-  @Post()
-  create(@Body() createMotorDto: CreateMotorDto) {
-    return this.motorsService.create(createMotorDto);
-  }
 
   @Get()
   findAll() {
@@ -22,13 +18,8 @@ export class MotorsController {
     return this.motorsService.findOne(id);
   }
 
-  @Put(':id')
-  update(@Param('id', ParseIntPipe) id: number, @Body() updateMotorDto: UpdateMotorDto) {
-    return this.motorsService.update(id, updateMotorDto);
-  }
-
-  @Delete(':id')
-  remove(@Param('id', ParseIntPipe) id: number) {
-    return this.motorsService.remove(id);
+  @Post()
+  create(@Body() createMotorDto: CreateMotorDto) {
+    return this.motorsService.create(createMotorDto);
   }
 }

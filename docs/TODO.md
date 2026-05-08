@@ -42,3 +42,13 @@
 - [x] uruchom projekt przez docker compose up
 - [x] sprawdź działanie aplikacji
 
+
+
+
+
+
+## Rozbudowa
+
+- [x] zmień sposób wybierania motocykli
+- [x] dodaj możliwość dodawania zdjęć motocykli
+- [x] dodaj kryteria dodawania (kategoria decyduje o dostepnych modelach a model o przedzialach rocnzikowych i pojemnosciach)

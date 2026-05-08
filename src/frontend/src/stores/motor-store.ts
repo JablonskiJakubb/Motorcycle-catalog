@@ -1,6 +1,10 @@
 import { defineStore } from 'pinia';
 import { ref } from 'vue';
+<<<<<<< HEAD
 import type { Motor, CreateMotorDto, UpdateMotorDto } from '../types/motor';
+=======
+import type { Motor } from '../types/motor';
+>>>>>>> wersja_2.0
 import { motorService } from '../api/motor-service';
 
 export const useMotorStore = defineStore('motor', () => {
@@ -33,6 +37,7 @@ export const useMotorStore = defineStore('motor', () => {
     }
   }
 
+<<<<<<< HEAD
   async function addMotor(motor: CreateMotorDto) {
     isLoading.value = true;
     error.value = null;
@@ -85,6 +90,9 @@ export const useMotorStore = defineStore('motor', () => {
       isLoading.value = false;
     }
   }
+=======
+
+>>>>>>> wersja_2.0
 
   return {
     motors,
@@ -93,8 +101,11 @@ export const useMotorStore = defineStore('motor', () => {
     error,
     fetchMotors,
     fetchMotorById,
+<<<<<<< HEAD
     addMotor,
     updateMotor,
     deleteMotor,
+=======
+>>>>>>> wersja_2.0
   };
 });

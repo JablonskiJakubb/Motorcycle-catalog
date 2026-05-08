@@ -1,18 +1,20 @@
-import { IsString, IsInt, IsOptional, IsUrl, Min, Max } from 'class-validator';
+import { IsString, IsInt, IsNotEmpty, Min, IsOptional, MaxLength } from 'class-validator';
 
 export class CreateMotorDto {
   @IsString()
+  @IsNotEmpty()
   name: string;
 
   @IsString()
+  @IsNotEmpty()
   brand: string;
 
   @IsString()
+  @IsNotEmpty()
   model: string;
 
   @IsInt()
-  @Min(1900)
-  @Max(new Date().getFullYear() + 1)
+  @Min(1885)
   year: number;
 
   @IsInt()
@@ -24,13 +26,15 @@ export class CreateMotorDto {
   power: number;
 
   @IsString()
+  @IsNotEmpty()
   type: string;
 
   @IsString()
   @IsOptional()
+  @MaxLength(1000)
   description?: string;
 
-  @IsUrl()
+  @IsString()
   @IsOptional()
   imageUrl?: string;
 }

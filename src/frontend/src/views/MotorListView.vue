@@ -2,6 +2,11 @@
 import { onMounted, computed, ref } from 'vue';
 import { useMotorStore } from '../stores/motor-store';
 import { RouterLink } from 'vue-router';
+<<<<<<< HEAD
+=======
+import { motorService } from '../api/motor-service';
+
+>>>>>>> wersja_2.0
 
 const store = useMotorStore();
 const searchQuery = ref('');
@@ -21,15 +26,32 @@ const filteredMotors = computed(() => {
 });
 
 const getBadgeColor = (type: string) => {
+<<<<<<< HEAD
   const types: Record<string, string> = {
+=======
+  const colors: Record<string, string> = {
+>>>>>>> wersja_2.0
     'Sport': '#ef4444',
     'Naked': '#3b82f6',
     'Touring': '#10b981',
     'Enduro': '#f59e0b',
+<<<<<<< HEAD
     'Cruiser': '#8b5cf6'
   };
   return types[type] || '#64748b';
 };
+=======
+    'Cruiser': '#8b5cf6',
+    'Adventure': '#06b6d4',
+    'Classic': '#71717a',
+    'Cafe Racer': '#78350f',
+    'Supermoto': '#d946ef',
+    'Chopper': '#475569'
+  };
+  return colors[type] || '#64748b';
+};
+
+>>>>>>> wersja_2.0
 </script>
 
 <template>
@@ -39,9 +61,13 @@ const getBadgeColor = (type: string) => {
         <h1>Motor Catalog</h1>
         <p class="text-muted">Explore the world's most impressive machines.</p>
       </div>
+<<<<<<< HEAD
       <RouterLink to="/add" class="btn btn-primary">
         <span class="icon">+</span> Add New Motor
       </RouterLink>
+=======
+
+>>>>>>> wersja_2.0
     </header>
 
     <div class="search-bar glass">
@@ -63,13 +89,21 @@ const getBadgeColor = (type: string) => {
     </div>
 
     <div v-else-if="filteredMotors.length === 0" class="empty-state glass">
+<<<<<<< HEAD
       <p>No motors found. Start by adding one!</p>
+=======
+      <p>No motors currently in the catalog.</p>
+>>>>>>> wersja_2.0
     </div>
 
     <div v-else class="grid">
       <div v-for="motor in filteredMotors" :key="motor.id" class="motor-card glass">
         <div class="card-image">
+<<<<<<< HEAD
           <img :src="motor.imageUrl || 'https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&q=80&w=600'" :alt="motor.name">
+=======
+          <img :src="motorService.formatImageUrl(motor.imageUrl)" :alt="motor.name">
+>>>>>>> wersja_2.0
           <div class="type-badge" :style="{ backgroundColor: getBadgeColor(motor.type) }">
             {{ motor.type }}
           </div>
@@ -84,7 +118,11 @@ const getBadgeColor = (type: string) => {
           </div>
           <div class="actions">
             <RouterLink :to="'/motor/' + motor.id" class="btn btn-secondary btn-sm">Details</RouterLink>
+<<<<<<< HEAD
             <RouterLink :to="'/edit/' + motor.id" class="btn btn-secondary btn-sm">Edit</RouterLink>
+=======
+
+>>>>>>> wersja_2.0
           </div>
         </div>
       </div>
