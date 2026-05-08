@@ -46,11 +46,7 @@ services:
     volumes:
       - ./src/frontend:/usr/src/app
       - /usr/src/app/node_modules
-<<<<<<< HEAD
-    depends_on:
-      - api
 
-=======
     environment:
       - VITE_API_PROXY_TARGET=http://api:3000
     depends_on:
@@ -66,7 +62,6 @@ services:
     depends_on:
       - database
 
->>>>>>> wersja_2.0
 volumes:
   postgres_data:
 
