@@ -1,2 +1,0 @@
-- [README](./README.md)
-- [Polecenie](./Polecenie.md) 

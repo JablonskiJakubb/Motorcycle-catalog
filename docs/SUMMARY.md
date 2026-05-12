@@ -1,0 +1,2 @@
+- [Wprowadzenie](../README.md)
+- [Polecenie](./Polecenie.md) 
